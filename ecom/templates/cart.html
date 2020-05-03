@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in c %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.product}}</td>
+      <td>{{i.price}}</td>
+      <td>{{i.quantity}}</td>
+      <td>{{i.total_cost}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+Total : {{total}}<br>
+<button type="button" class="btn btn-secondary">Checkout</button>
+{% endblock %}

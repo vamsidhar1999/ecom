@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{%if s %}
+<div class="row">
+
+{% for i in s %}
+<div class="col-sm">
+
+<a href="{%url 'ecom:detail' i.pk i.slug %}">{{i.title}}</a><br>
+₹{{i.price}}<br>
+<br><br>
+
+<img src="{{i.img.url}}" height="300" width="300"><br>
+
+</div>
+{% endfor %}
+{%else%}
+<p>no results</p>
+{%endif%}
+
+</div>
+{% endblock %}
